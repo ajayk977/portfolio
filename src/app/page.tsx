@@ -1,52 +1,29 @@
+"use client"; // Ensure this is a Client Component
+
 import Link from "next/link";
+import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import Navbar from "@/components/Navbar";
 
 function Page() {
   return (
     <>
-      {/* Navbar Section */}
-      <div className="bg-slate-800 h-16 flex justify-between items-center fixed w-full z-50 top-0 transition-all ease-in-out duration-300 px-6 shadow-lg">
-        <p className="p-20 text-white text-lg font-extrabold hover:text-blue-400 cursor-pointer transition-all duration-300">
-          Ajay Kumar
-        </p>
-        
-        {/* Right section: Navigation Links */}
-        <nav className="flex space-x-8 text-white pr-20">
-          <Link href="/about">
-            <p className="text-lg font-bold transition-all duration-300 hover:text-blue-400 transform hover:scale-105 cursor-pointer">
-              About Me
-            </p>
-          </Link>
-          <Link href="/projects">
-            <p className="text-lg font-bold transition-all duration-300 hover:text-blue-400 transform hover:scale-105 cursor-pointer">
-              Projects
-            </p>
-          </Link>
-          <Link href="/experience">
-            <p className="text-lg font-bold transition-all duration-300 hover:text-blue-400 transform hover:scale-105 cursor-pointer">
-              Experience
-            </p>
-          </Link>
-          <Link href="/contact">
-            <p className="text-lg font-bold transition-all duration-300 hover:text-blue-400 transform hover:scale-105 cursor-pointer">
-              Contact
-            </p>
-          </Link>
-        </nav>
-      </div>
-
+      <Navbar />
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-700 min-h-screen flex items-center justify-center relative">
+      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black min-h-screen flex items-center justify-center relative">
         {/* Overlay background */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center px-6 py-12">
           {/* Left Section: Image Container */}
           <div className="w-full sm:w-1/2 lg:w-1/3 flex justify-center mb-6 lg:mb-0">
-            <img
-              src="https://via.placeholder.com/300" // Replace with your image URL
-              alt="Your Image"
-              className="w-48 h-48 rounded-full border-4 border-white shadow-2xl transform hover:scale-110 transition-all duration-500 ease-in-out"
-            />
+            <div className="relative group w-64 h-48 overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="/profile.jpg" // Replace with your image URL
+                alt="Your Image"
+                className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 rounded-lg border-4 border-blue-500 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></div>
+            </div>
           </div>
 
           {/* Right Section: About Me Container */}
@@ -71,46 +48,37 @@ function Page() {
               <a
                 href="/cv.pdf" // Ensure your cv.pdf is placed in the public folder
                 download
-                className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-300"
+                className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-300 transform hover:scale-105"
               >
-                Download CV
+                My CV
               </a>
             </div>
 
             {/* Social Media Links */}
-            <div className="mt-6 flex justify-center lg:justify-start space-x-8">
+            <div className="mt-6 flex justify-center lg:justify-start space-x-6">
               <a
                 href="https://www.linkedin.com/in/ajay-kumar-27b46a261/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-white hover:text-blue-600 transform hover:scale-105 transition-all duration-300"
               >
-                <img
-                  src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/linkedin.svg" // LinkedIn icon
-                  alt="LinkedIn"
-                  className="w-10 h-10 text-white hover:text-blue-600 transform hover:scale-105 transition-all duration-300"
-                />
+                <FaLinkedin size={30} />
               </a>
               <a
                 href="https://github.com/ajayk977"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-white hover:text-gray-400 transform hover:scale-105 transition-all duration-300"
               >
-                <img
-                  src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/github.svg" // GitHub icon
-                  alt="GitHub"
-                  className="w-10 h-10 text-white hover:text-gray-800 transform hover:scale-105 transition-all duration-300"
-                />
+                <FaGithub size={30} />
               </a>
               <a
                 href="https://x.com/ajaysharma977?t=K7y7Ybb2Ijh0GzAnlZfvHA&s=08"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-white hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
               >
-                <img
-                  src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/twitter.svg" // Twitter icon
-                  alt="Twitter"
-                  className="w-10 h-10 text-white hover:text-blue-400 transform hover:scale-105 transition-all duration-300"
-                />
+                <FaTwitter size={30} />
               </a>
             </div>
           </div>
@@ -118,7 +86,7 @@ function Page() {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-slate-900 text-center text-white py-6">
+      <footer className="bg-gray-800 text-center text-white py-6">
         <p>© 2024 Ajay Kumar. All rights reserved.</p>
       </footer>
     </>

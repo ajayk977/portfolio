@@ -20,6 +20,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Define fade-in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animation utility class */
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
