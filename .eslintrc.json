@@ -1,3 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"], // Enforce semicolons at the end of statements
+    "eqeqeq": ["error", "always"], // Require the use of === and !==
+    "no-console": "warn", // Warn on console.log statements
+    "react/react-in-jsx-scope": "off" // Allow React 17+ without import in JSX
+  }
 }
