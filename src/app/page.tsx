@@ -1,3 +1,5 @@
+// app/about/page.js
+
 "use client"; // Ensure this is a Client Component
 
 import Link from "next/link";
@@ -18,7 +20,7 @@ function Page() {
           <div className="w-full sm:w-1/2 lg:w-1/3 flex justify-center mb-6 lg:mb-0">
             <div className="relative group w-64 h-48 overflow-hidden rounded-lg shadow-lg">
               <img
-                src="/profile.jpg" // Replace with your image URL
+                src="/profile.jpg" // Ensure your image is in the public folder
                 alt="Your Image"
                 className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
               />
