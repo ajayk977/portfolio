@@ -1,28 +1,28 @@
 // app/experience/page.js
 
-import Navbar from "@/components/Navbar";
+import Navbar from '@/components/Navbar';
 
 const experienceData = [
   {
-    position: "Frontend Developer",
-    company: "Omninos Technologies Int. Pvt. Ltd",
-    duration: "Jan 2023 - Present",
-    description: "Developing user-friendly web applications using React and Tailwind CSS.",
-    link: "https://company-a.com",
+    position: 'Frontend Developer',
+    company: 'Omninos Technologies Int. Pvt. Ltd',
+    duration: 'Jan 2023 - Present',
+    description: 'Developing user-friendly web applications using React and Tailwind CSS.',
+    link: 'https://company-a.com',
   },
   {
-    position: "Backend Developer",
-    company: "Omninos Technologies Int. Pvt. Ltd",
-    duration: "Jan 2022 - Dec 2023",
-    description: "Worked on RESTful APIs and database management using Node.js and MongoDB.",
-    link: "https://www.omninos.in",
+    position: 'Backend Developer',
+    company: 'Omninos Technologies Int. Pvt. Ltd',
+    duration: 'Jan 2022 - Dec 2023',
+    description: 'Worked on RESTful APIs and database management using Node.js and MongoDB.',
+    link: 'https://www.omninos.in',
   },
   {
-    position: "Intern",
-    company: "CS Soft",
-    duration: "June 2021 - Dec 2021",
-    description: "Assisted in developing web applications and gaining experience in Agile methodologies.",
-    link: "https://www.omninos.in",
+    position: 'Intern',
+    company: 'CS Soft',
+    duration: 'June 2021 - Dec 2021',
+    description: 'Assisted in developing web applications and gaining experience in Agile methodologies.',
+    link: 'https://www.omninos.in',
   },
   // Add more experiences as needed
 ];

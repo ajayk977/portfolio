@@ -1,15 +1,15 @@
 // app/contact/page.js
 
-"use client";
-import { useState } from "react";
-import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-import Navbar from "@/components/Navbar";
+'use client';
+import { useState } from 'react';
+import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import Navbar from '@/components/Navbar';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false); // State to handle form submission status
 
@@ -23,10 +23,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
@@ -34,16 +34,12 @@ const Contact = () => {
       const data = await response.json();
 
       if (response.ok) {
-        console.log("Form submitted successfully:", data);
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", message: "" }); // Reset form
+        setFormData({ name: '', email: '', message: '' }); // Reset form
       } else {
-        console.error("Submission error:", data.message);
         // Handle error (e.g., show a message to the user)
       }
     } catch (error) {
-      console.error("Network error:", error);
-      // Handle network error (e.g., show a message to the user)
     }
   };
 

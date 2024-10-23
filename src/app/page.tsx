@@ -1,15 +1,20 @@
-// app/about/page.js
+'use client';
 
-"use client"; // Ensure this is a Client Component
-
-import Link from "next/link";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-import Navbar from "@/components/Navbar";
+import Navbar from '@/components/Navbar';
+import Head from 'next/head';
+import Image from 'next/image'; // Make sure to import Image
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 function Page() {
   return (
     <>
+      <Head>
+        <title>About Me - Ajay Kumar</title>
+        <meta name="description" content="Learn more about Ajay Kumar, a web developer specializing in React.js." />
+      </Head>
+      
       <Navbar />
+      
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black min-h-screen flex items-center justify-center relative">
         {/* Overlay background */}
@@ -19,10 +24,12 @@ function Page() {
           {/* Left Section: Image Container */}
           <div className="w-full sm:w-1/2 lg:w-1/3 flex justify-center mb-6 lg:mb-0">
             <div className="relative group w-64 h-48 overflow-hidden rounded-lg shadow-lg">
-              <img
+              <Image
                 src="/profile.jpg" // Ensure your image is in the public folder
                 alt="Your Image"
-                className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                layout="fill" // Use layout fill to cover the parent container
+                objectFit="cover" // Ensure the image covers the container without distortion
+                className="transition-transform duration-500 ease-in-out group-hover:scale-105"
               />
               <div className="absolute inset-0 rounded-lg border-4 border-blue-500 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></div>
             </div>
@@ -34,14 +41,14 @@ function Page() {
               About Me
             </h1>
             <p className="text-xl font-light mb-4 leading-relaxed">
-              Hello! I'm Ajay Kumar, a passionate developer who loves coding and
+              Hello! I am Ajay Kumar, a passionate developer who loves coding and
               building innovative solutions. I specialize in web development,
               particularly with React.js, and I enjoy exploring new
               technologies. My goal is to continually grow and contribute to
               impactful projects.
             </p>
             <p className="text-lg mt-4">
-              If you're looking to collaborate or just want to chat about tech,
+              If you are looking to collaborate or just want to chat about tech,
               feel free to reach out!
             </p>
 

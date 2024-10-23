@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 function Navbar() {
   return (
@@ -23,7 +23,7 @@ function Navbar() {
         </nav> 
        </header>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

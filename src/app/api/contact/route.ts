@@ -1,6 +1,6 @@
 // app/api/contact/route.js
-import dbConnect from "@/lib/dbConnect";
-import Message from "@/model/contact.model";
+import dbConnect from '@/lib/dbConnect';
+import Message from '@/model/contact.model';
 
 export async function POST(req: Request) {
     await dbConnect();
@@ -19,7 +19,6 @@ export async function POST(req: Request) {
 
         return new Response(JSON.stringify({ success: true, message: 'Message sent!' }), { status: 200 });
     } catch (error) {
-        console.error('Error saving message:', error); // Log the error for debugging
         return new Response(JSON.stringify({ success: false, message: 'An error occurred while sending your message. Please try again later.' }), { status: 500 });
     }
 }

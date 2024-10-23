@@ -1,17 +1,17 @@
 // app/about/page.js
 
-"use client"; // Ensure this is a Client Component
+'use client'; // Ensure this is a Client Component
 
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import Navbar from "@/components/Navbar";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
+import Navbar from '@/components/Navbar';
 import Image from 'next/image'; // Import Image from Next.js if you use images later
 
 const About = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white mt-16 ">
-        <h1 className="text-4xl mb-6 animate-fade-in ">About Me</h1>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white mt-16">
+        <h1 className="text-4xl mb-6 animate-fade-in">About Me</h1>
         
         <div className="max-w-3xl text-center mb-8 animate-fade-in">
           <p className="text-lg mb-4">
