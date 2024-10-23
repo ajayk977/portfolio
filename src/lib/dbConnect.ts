@@ -15,11 +15,11 @@ async function dbConnect(): Promise<void> {
   try {
     // Attempt to connect to the database
     const db = await mongoose.connect(process.env.MONGODB_URI || '', {});
-
+      console.log('MongoDB connected');
     connection.isConnected = db.connections[0].readyState;
 
   } catch (error) {
-
+     console.log(error);
     // Graceful exit in case of a connection error
     process.exit(1);
   }

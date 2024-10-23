@@ -20,28 +20,31 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e : React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
 
-      const data = await response.json();
+        const data = await response.json();
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: '', email: '', message: '' }); // Reset form
-      } else {
-        // Handle error (e.g., show a message to the user)
-      }
+        if (response.ok) {
+            setIsSubmitted(true);
+            setFormData({ name: '', email: '', message: '' });
+        } else {
+            // Show error message to user
+            alert(data.message); // Display the error message returned by your API
+        }
     } catch (error) {
+        console.error('Submission error:', error);
     }
-  };
+};
+
 
   return (
     <>

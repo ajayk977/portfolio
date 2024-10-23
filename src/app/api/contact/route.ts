@@ -7,6 +7,7 @@ export async function POST(req: Request) {
 
     try {
         const { name, email, message } = await req.json();
+        console.log('Received message:', name, email, message);
 
         // Validate input
         if (!name || !email || !message) {
@@ -16,6 +17,7 @@ export async function POST(req: Request) {
         // Create and save new message
         const newMessage = new Message({ name, email, message });
         await newMessage.save();
+        console.log('New message saved:', newMessage);
 
         return new Response(JSON.stringify({ success: true, message: 'Message sent!' }), { status: 200 });
     } catch (error) {
